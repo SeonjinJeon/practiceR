@@ -91,6 +91,40 @@ A[c(1,4), c(2,3)] <- 1
 A
 A+1
 
+lst <- list(3.14, "MOE", c(1,1,2,3), mean)
+lst
+a <- 1:10
+b <- matrix(1:10, 2, 5)
+c <- c("name1", "name2")
+alst <- list(x=a, y=b, z=c)
+alst
+alst$x
+blst <- list(d=2:10*10)
+blst
+alst$a
+alst$x
+alst[[1]]
+alst[1][2]
+alst[[2]]
+ablst <- c(alst, blst)
+blst
+score1 <- list(10,20,30,40,50)
+score2 <- list(c("a","b"))
+score1[score1 > 40]
+score1 > 40
+score1[c(FALSE, FALSE, FALSE, FALSE, TRUE)]
+core12 <- list(score1, score2)
+score12
+score12[1]
+score12[2]
+core12[1]
+score12[[2]]
+score12[[2]][1]
+score12[[1]][1]
+score12[[1]][2]
+unlist(score1)
+unlist(score2)
+unlist(score12)
 
 a <- c(1,2,3,4,5)
 write.csv(a, "test.csv")
