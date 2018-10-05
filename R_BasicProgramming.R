@@ -126,6 +126,133 @@ unlist(score1)
 unlist(score2)
 unlist(score12)
 
+a<-c(1,2,4,6,3,4)
+b<-c(6,4,2,4,3.2,4)
+c<-c(7,6,4,2,5,6)
+d<-c(2,4,3,1,5,6)
+e<-data.frame(a,b,c,d)
+e
+data(iris)
+head(iris)
+newRow<-data.frame(Sepal.Length=3.0, Sepal.Width=3.2, Petal.Length=1.6, Petal.Width=0.3, Species="newsetosa")
+newRow
+iris<-rbind(iris,newRow)
+iris
+newcol<-1:151
+cbind(iris, newcol)
+name <- c("john", "peter", "jennifer")
+gender<-factor(c("m","m","f"))
+hw1<-c(60,60,80)
+hw2<-c(40,50,30)
+grades<-data.frame(name, gender, hw1, hw2)
+grades
+grades[1,2]
+grades[, "name"]
+grades$name
+grades[grades$gender == "m",]
+grades[, "hw1"]
+data(iris)
+head(iris)
+subset(iris, select=Species, subset=(Petal.Length > 1.7))
+subset(iris, select=c(Sepal.Length, Petal.Length, Species), subset=c(Sepal.Width==3.0 & Petal.Width==0.2))
+head(with(iris, Species))
+name <- c("Moe", "Larry", "Curly", "Harry")
+year.born <- c(1887,1982,1983,1964)
+place.born <- c("BensonHurst", "Philadelphia", "Brooklyn", "Moscow")
+born <- data.frame(name, year.born, place.born)
+born
+name <- c("Curly","Moe","Larry")
+year.died <- c(1952,1975,1975)
+died <- data.frame(name, year.died)
+died
+merge(born, died, by="name")
+data(mtcars)
+head(mtcars)
+colnames(mtcars)
+mtcars[1:5, c("mpg","cyl")]
+mtcars[(mtcars$gear > 3) & (mtcars$cyl > 7 | mtcars$mpg > 21), c("mpg","cyl","gear")]
+fib<-c(0,1,1,2,3,5,8,13,21,34)
+fib
+fib[1]
+fib[3]
+fib[1:3]
+fib[c(1,2,4,8)]
+fib[-1]
+fib[-c(1:3)]
+fib < 10
+fib[fib<10]
+fib%%2==0
+fib[fib%%2==0]
+c <- 1:10
+c
+d <- 1:5
+d[c(1,3)]
+c[c(2,3)]
+d[c(1:3, 5)]
+c(c>5 & c<10)
+c[as.logical((c>8) + (c<3))]
+years <- c(1960, 1964, 1976, 1994)
+names(years) <- c("Kennedy","Johnson", "Carter", "Clinton")
+years
+years["Carter"]
+years["Clinton"]
+as.numeric("3.14")
+as.integer(3.14)
+as.numeric("foo")
+as.character(101)
+as.numeric(FALSE)
+as.numeric(TRUE)
+Sys.Date()
+as.Date("2018-09-28")
+as.Date("09/28/2018")
+as.Date("09/28/2018", format="%m/%d/%Y")
+as.Date("09/28/2018", format="%m/%d/%Y")
+format(Sys.Date())
+as.character(Sys.Date())
+format(Sys.Date(), format="%m/%d/%Y")
+format(Sys.Date(), '%a')
+format(Sys.Date(), '%b')
+format(Sys.Date(), '%B')
+format(Sys.Date(), '%d')
+format(Sys.Date(), '%m')
+format(Sys.Date(), '%y')
+format(Sys.Date(), '%Y')
+x<-c(0,1,2,3,5,8,13,21,34)
+y<-log(x+1)
+y
+mean(x)
+median(x)
+sd(x)
+var(x)
+cor(x, y)
+c<-1:10
+c
+a/c
+c^2
+c^2+1
+log(c)
+sapply(c, log)
+c<-1:10
+c
+d<-(1:10)*10
+d
+c+d
+c*d
+d^c
+var(c)
+log(c)
+sum((c-mean(c))^2)/(length(c)-1)
+c<-1:10
+c[log(c) < 2]
+c[log(c)<2] <- 3
+c
+length(c) <- 20
+c
+c[25] <- 1
+c
+length(c) <- 10
+c
+
 a <- c(1,2,3,4,5)
 write.csv(a, "test.csv")
 b<-read.csv("test.csv")
